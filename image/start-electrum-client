@@ -1,0 +1,5 @@
+#!/bin/sh -ex
+
+chown electrum-client:electrum-client -R /data/electrum-client
+
+exec gosu electrum-client:electrum-client electrum --electrum_path=/data/electrum-client $@
