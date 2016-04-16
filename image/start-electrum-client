@@ -1,5 +1,10 @@
 #!/bin/sh -ex
 
+if ! test -e /home/electrum-client/.electrum; then
+	mkdir -p /home/electrum-client
+	ln -fs /data/electrum-client/ /home/electrum-client/.electrum
+fi
+
 chown electrum-client:electrum-client -R /data/electrum-client
 
-exec gosu electrum-client:electrum-client electrum --electrum_path=/data/electrum-client $@
+exec gosu electrum-client:electrum-client electrum $@
