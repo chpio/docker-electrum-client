@@ -13,7 +13,7 @@ RUN { set -ex; \
 
 RUN { set -ex; \
 	# install
-	pip install https://download.electrum.org/2.7.12/Electrum-2.7.12.tar.gz; \
+	pip install https://download.electrum.org/2.7.17/Electrum-2.7.17.tar.gz; \
 
 	# clean up
 	rm -rf /tmp/* /var/tmp/*; \
