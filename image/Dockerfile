@@ -1,4 +1,4 @@
-FROM chpio/gosu:jessie
+FROM chpio/gosu:stretch
 
 RUN { set -ex; \
 	# add user & group
