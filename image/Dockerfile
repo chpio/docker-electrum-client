@@ -12,11 +12,20 @@ RUN { set -ex; \
 }
 
 RUN { set -ex; \
+	# install build deps
+	BUILD_DEPS="python-setuptools"; \
+	apt-get update; \
+	apt-get install --no-install-recommends -y $BUILD_DEPS; \
+
+
+
 	# install
 	pip install https://download.electrum.org/2.9.3/Electrum-2.9.3.tar.gz; \
 
 	# clean up
-	rm -rf /tmp/* /var/tmp/*; \
+	apt-get purge -y $BUILD_DEPS; \
+	apt-get autoremove -y; \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
 }
 
 VOLUME /data/electrum-client
