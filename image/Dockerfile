@@ -20,7 +20,7 @@ RUN { set -ex; \
 
 
 	# install
-	pip install https://download.electrum.org/2.9.3/Electrum-2.9.3.tar.gz; \
+	pip install https://download.electrum.org/3.0.1/Electrum-3.0.1.tar.gz; \
 
 	# clean up
 	apt-get purge -y $BUILD_DEPS; \
