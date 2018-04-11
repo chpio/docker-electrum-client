@@ -22,9 +22,9 @@ RUN { set -ex; \
 	apt-get install --no-install-recommends -y $BUILD_DEPS; \
 
 	# download
-	git clone https://github.com/spesmilo/electrum.git /tmp/build --depth 1 --branch 3.0.1; \
+	git clone https://github.com/spesmilo/electrum.git /tmp/build --depth 1 --branch 3.1.2; \
 	cd /tmp/build; \
-	git checkout d599f11cceb0b74d092befff019097d0f0d3f2ac; \
+	git checkout 377825a4584caf1034c8e89e540e8ccee95d3af9; \
 
 	# install
 	protoc --proto_path=lib/ --python_out=lib/ lib/paymentrequest.proto; \
